@@ -1,0 +1,45 @@
+<p class="text-center" mat-dialog-title>Please fill the Fields</p>
+<form [formGroup]="userForm" (submit)="addNewAnimal()">
+    <mat-dialog-content class="mat-typography">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Animal</mat-label>
+            <input formControlName="type" id="type" matInput placeholder="type">
+          <mat-icon matSuffix>pets</mat-icon>
+        </mat-form-field>
+      </p>
+
+      <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Color</mat-label>
+          <input formControlName="color" id="color" matInput placeholder="color">
+        <mat-icon matSuffix>invert_colors</mat-icon>
+      </mat-form-field>
+        </p>
+
+        <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Weight</mat-label>
+            <input formControlName="weight" id="weight" matInput placeholder="weight">
+          <mat-icon matSuffix>anchor</mat-icon>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Length</mat-label>
+            <input formControlName="length" id="length" matInput placeholder="length">
+          <mat-icon matSuffix>square_foot</mat-icon>
+        </mat-form-field>
+      </p>        
+  </mat-dialog-content>
+
+
+  <mat-dialog-actions class="mat-dialog-actions justify-content-center">
+  <div class="row d-flex">
+    <button class="col-sm-3" mat-raised-button color="primary" mat-dialog-close>OUT</button>
+    <button class="col-sm-3" mat-raised-button color="primary" type="submit" [mat-dialog-close]="true" cdkFocusInitial>ADD</button>
+  </div>
+  </mat-dialog-actions>
+</form>
+  

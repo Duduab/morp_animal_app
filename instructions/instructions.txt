@@ -1,0 +1,47 @@
+build an animals app
+1. the app will consist of:
+    * top bar - will iclude:
+        title
+        total animals counter
+        "add new animal" button
+    * lists section - will iclude:
+        4 lists (animal type, animal color, animal weight, animal length) as described next:
+            each list will have:
+                * title and counter of number of items in this list
+                * list with the items of the relevant category (type / color / wight / length) (each list should be scrollable if there more items then can fit)
+                * unique feature of those lists: clicking on any element of the one of the lists will highlights the coresponding items in the other lists for example:
+                    click on "cat" in the "type" list will trigger the other lists: 
+                        in "color" list all the colors items that have type cat will be hilighted
+                        in "weight" list all the weights items that have type cat will be hilighted
+                        in "length" list all the lenghts items that have type cat will be hilighted
+                    each click will re trigger the relevant items
+
+
+you are provided with a base (clean) angular app (angluar 10)
+inside you have the front end section (src directory) and a backend section (backend directory)
+the backend is only for you to get the data from the api call (do not change it)
+
+you need to have node 12+ installed (download and install from https://nodejs.org/en/)
+
+run "npm install" to install all the dependencies for this project.
+run "ng serve" to run the angular app (the app will run on localhost:4200)
+to run the backend simply run the command "npm run start-server" from the cmd (when you are in the application's directory) - the server will run on this address http://localhost:3000
+
+the API that you are provided are:
+    GET request: /getAnimalsList (http://localhost:3000/getAnimalsList)
+    this api will return a list similar to this:
+    [
+        {
+            "type": "cat",
+            "color": "white",
+            "weight": 10,
+            "length": 20
+        },
+        {
+            "type": "dog",
+            "color": "black",
+            "weight": 15,
+            "length": 25
+        }
+        ...
+    ]

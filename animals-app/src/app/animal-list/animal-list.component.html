@@ -1,0 +1,47 @@
+<div class="container mt-15">
+    <div class="row d-flex justify-content-center">
+        <mat-form-field class="col-sm-3" appearance="fill">
+          <mat-label>Filter results</mat-label>
+          <mat-select (valueChange)="changeValue($event)">
+            <mat-option class="text-center">
+              See All
+            </mat-option>
+            <mat-option class="text-center" *ngFor="let title of titles" [value]="title">
+              {{title}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+          <button mat-raised-button color="primary"
+              [matBadge]="counter" matBadgePosition="before" matBadgeColor="accent" matBadgeSize="medium"
+              >
+              Counter
+          </button>
+    </div>
+    <div class="row d-flex w-100 ml-0">
+    </div>
+      <mat-list class="border justify-content-center">
+        <mat-list-item>
+          <div class="row d-flex w-100 justify-content-center titles-list" *ngFor="let item of titles">
+              <div class="col-sm-3 text-center" >{{item}}</div>
+          </div>
+        </mat-list-item>
+        <mat-list-item *ngFor="let item of animals">
+          <div class="row d-flex w-100">
+              <div class="col-sm-3 text-center item-class" [ngClass]="{highlight: item.highlight}" (click)="handleClick(item, 'type')">
+                <ng-container *ngIf="!service.selectedAttributes || service.selectedAttributes == 'type'">{{item.type}}</ng-container>
+              </div>
+              <div class="col-sm-3 text-center item-class" [ngClass]="{highlight: item.highlight}" (click)="handleClick(item, 'color')">
+                <ng-container *ngIf="!service.selectedAttributes || service.selectedAttributes == 'color'">{{item.color}}</ng-container>
+              </div>
+              <div class="col-sm-3 text-center item-class" [ngClass]="{highlight: item.highlight}" (click)="handleClick(item, 'weight')">
+                <ng-container *ngIf="!service.selectedAttributes || service.selectedAttributes == 'weight'">{{item.weight}}</ng-container>
+              </div>
+              <div class="col-sm-3 text-center item-class" [ngClass]="{highlight: item.highlight}" (click)="handleClick(item, 'length')">
+                <ng-container *ngIf="!service.selectedAttributes || service.selectedAttributes == 'length'">{{item.length}}</ng-container>
+              </div>
+          </div>
+          </mat-list-item>
+      </mat-list>
+  </div>
+  
+  
